@@ -6,8 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace RegIN_Kazakov
-{
+namespace RegIN {
     /// <summary>
     /// Логика взаимодействия для App.xaml
     /// </summary>

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RegIN_Kazakov.Properties
+namespace RegIN.Properties
 {
 
 
