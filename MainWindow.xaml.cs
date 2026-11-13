@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace RegIN_Kazakov
+namespace RegIN
 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
