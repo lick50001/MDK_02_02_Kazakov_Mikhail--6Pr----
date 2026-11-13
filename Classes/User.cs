@@ -19,7 +19,7 @@ namespace RegIN.Classes
         public delegate void CorrectLogin();
         public delegate void InCorrectLogin();
 
-        public void GetUserLogin(string Login, MySqlConnection mySqlConnection)
+        public void GetUserLogin(string Login)
         {
             this.Id = -1;
             this.Login = String.Empty;
