@@ -66,10 +66,8 @@
                         Margin="46,235,54,43.2"
                         Click="SendMail"/>
                 <Label Content="Back"
+                       Style="{StaticResource LabelBtnStyle}"
                        Margin="10,273,10,0"
-                       VerticalAlignment="Top"
-                       Foreground="#FF673AB7"
-                       FontSize="10"
                        MouseDown="OpenLogin"/>
             </Grid>
         </materialDesign:Card>

@@ -75,19 +75,15 @@
                     KeyUp="SetPassword"/>
                 <Label
                     Content="Forgot your password?"
+                    Style="{StaticResource LabelBtnStyle}"
                     Margin="10,373,0,0"
-                    VerticalAlignment="Top"
-                    Foreground="#FF673AB7"
-                    FontSize="10"
                     MouseDown="RecoveryPassword"
                     HorizontalAlignment="Left"
                     Width="110"/>
                 <Label
                     Content="Registration"
+                    Style="{StaticResource LabelBtnStyle}"
                     Margin="0,373,10,0"
-                    VerticalAlignment="Top"
-                    Foreground="#FF673AB7"
-                    FontSize="10"
                     MouseDown="OpenRegin"
                     HorizontalAlignment="Right"
                     Width="62"/>

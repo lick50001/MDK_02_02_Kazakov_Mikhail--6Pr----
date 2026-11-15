@@ -13,6 +13,9 @@ namespace RegIN.Pages
 {
     public partial class Regin : Page
     {
+        private static readonly Regex LoginReg = new Regex(@"([a-zA-Z0-9._-]{4,}@[a-zA-Z0-9._-]{2,}\.[a-zA-Z0-9_-]{2,})", RegexOptions.Compiled);
+        private static readonly Regex PasswordReg = new Regex(@"(?=.*[0-9])(?=.*[!@#$%^&?*\-_=])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&?*\-_=]{10,}", RegexOptions.Compiled);
+
         OpenFileDialog FileDialogImage = new OpenFileDialog();
         bool BCorrectLogin = false;
         bool BCorrectPassword = false;
@@ -49,9 +52,9 @@ namespace RegIN.Pages
 
         public void SetLogin()
         {
-            Regex regex = new Regex(@"([a-zA-Z0-9._-]{4,}@[a-zA-Z0-9._-]{2,}\.[a-zA-Z0-9_-]{2,})");
-            BCorrectLogin = regex.IsMatch(TbLogin.Text);
-            if (regex.IsMatch(TbLogin.Text) == true)
+            BCorrectLogin = LoginReg.IsMatch(TbLogin.Text);
+
+            if (BCorrectLogin)
             {
                 SetNotification("", Brushes.Black);
                 MainWindow.mainWindow.UserLogIn.GetUserLogin(TbLogin.Text);
@@ -72,9 +75,8 @@ namespace RegIN.Pages
 
         public void SetPassword()
         {
-            Regex regex = new Regex(@"(?=.*[0-9])(?=.*[!@#$%^&?*\-_=])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&?*\-_=]{10,}");
-            BCorrectPassword = regex.IsMatch(TbPassword.Password);
-            if (regex.IsMatch(TbPassword.Password) == true)
+            BCorrectPassword = PasswordReg.IsMatch(TbPassword.Password);
+            if (BCorrectPassword)
             {
                 SetNotification("", Brushes.Black);
                 if (TbConfirmPassword.Password.Length > 0)
