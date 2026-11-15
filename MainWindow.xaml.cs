@@ -1,6 +1,5 @@
 ﻿using RegIN.Classes;
 using System;
-using System.Security.Cryptography;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Animation;

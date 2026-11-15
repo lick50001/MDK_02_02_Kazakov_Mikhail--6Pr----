@@ -1,6 +1,6 @@
-﻿using System;
+﻿using MySqlConnector;
+using System;
 using System.Collections.Generic;
-using MySqlConnector;
 
 namespace RegIN.Classes
 {
@@ -40,8 +40,7 @@ namespace RegIN.Classes
                     this.Name = userQuery.GetString(3);
                     if (!userQuery.IsDBNull(4))
                     {
-                        this.Image = new byte[64 * 1024];
-                        userQuery.GetBytes(4, 0, Image, 0, Image.Length);
+                        this.Image = (byte[])userQuery[4];
                     }
                     this.DateUpdate = userQuery.GetDateTime(5);
                     this.DateCreate = userQuery.GetDateTime(6);
@@ -99,18 +98,13 @@ namespace RegIN.Classes
             char[] ArrSymbols = { '|', '-', '_', '!', '@', '#', '$', '%', '&', '*', '=', '+' };
             char[] ArrUppercase = { 'q', 'w', 'e', 'r', 't', 's', 'y', 'u', 'i', 'o', 'p', 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'z', 'x', 'c', 'v', 'b', 'n', 'm' };
 
-            for (int i = 0; i < 1; i++)
-            {
-                NewPassword.Add(ArrNumbers[rnd.Next(0, ArrNumbers.Length)]);
-            }
-            for (int i = 0; i < 1; i++)
-            {
-                NewPassword.Add(ArrSymbols[rnd.Next(0, ArrSymbols.Length)]);
-            }
-            for (int i = 0; i < 2; i++)
-            {
-                NewPassword.Add(char.ToUpper(ArrUppercase[rnd.Next(0, ArrUppercase.Length)]));
-            }
+            NewPassword.Add(ArrNumbers[rnd.Next(0, ArrNumbers.Length)]);
+
+            NewPassword.Add(ArrSymbols[rnd.Next(0, ArrSymbols.Length)]);
+
+            NewPassword.Add(char.ToUpper(ArrUppercase[rnd.Next(0, ArrUppercase.Length)]));
+            NewPassword.Add(char.ToUpper(ArrUppercase[rnd.Next(0, ArrUppercase.Length)]));
+
             for (int i = 0; i < 6; i++)
             {
                 NewPassword.Add(ArrUppercase[rnd.Next(0, ArrUppercase.Length)]);

@@ -31,8 +31,11 @@ namespace RegIN.Classes
 
         public static void CloseConnection(MySqlConnection mySqlConnection)
         {
-            mySqlConnection.Close();
-            MySqlConnection.ClearPool(mySqlConnection);
+            if (mySqlConnection != null)
+            {
+                mySqlConnection.Close();
+                MySqlConnection.ClearPool(mySqlConnection);
+            }
         }
 
         public static bool OpenConnection(MySqlConnection mySqlConnection)
