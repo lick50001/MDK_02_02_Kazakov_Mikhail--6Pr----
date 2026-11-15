@@ -32,7 +32,7 @@
                     Margin="32"
                     VerticalAlignment="Top"
                     Width="100"
-                    Source="/RegIN;component/Images/ic-user.png"
+                    Source="/Images/ic-user.png"
                     MouseDown="SelectImage">
                     <Image.Clip>
                         <EllipseGeometry
@@ -56,7 +56,7 @@
                     Height="23"
                     Margin="10,185,10,0"
                     TextWrapping="Wrap"
-                    Text=""
+                    Text="stepan.klimoff@mail.ru"
                     VerticalAlignment="Top"
                     KeyDown="SetLogin"
                     LostFocus="SetLogin"/>
@@ -69,7 +69,7 @@
                     Height="23"
                     Margin="10,237,10,0"
                     TextWrapping="Wrap"
-                    Text=""
+                    Text="Степан"
                     VerticalAlignment="Top"
                     PreviewTextInput="SetName"/>
                 <Label
@@ -82,7 +82,7 @@
                     VerticalAlignment="Top"
                     Height="26"
                     KeyDown="SetPassword"
-                    LostFocus="SetPassword"/>
+                    LostFocus="SetPassword" Password="Steps0n1070642?"/>
                 <Label
                     Content="Confirm the password:"
                     Margin="10,320,10,0"
@@ -93,7 +93,7 @@
                     VerticalAlignment="Top"
                     Height="26"
                     KeyDown="ConfirmPassword"
-                    LostFocus="ConfirmPassword"/>
+                    LostFocus="ConfirmPassword" Password="Steps0n1070642?"/>
                 <Label
                     Content="Back"
                     Margin="10,373,10,0"
