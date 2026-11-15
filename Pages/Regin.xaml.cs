@@ -1,4 +1,5 @@
 ﻿using Microsoft.Win32;
+using RegIN_Kazakov.Classes;
 using System;
 using System.IO;
 using System.Text.RegularExpressions;
@@ -182,20 +183,7 @@ namespace RegIN.Pages
                     rasterImage.Save("IUser.jpg");
                 }
 
-                DoubleAnimation StartAnimation = new DoubleAnimation();
-                StartAnimation.From = 1;
-                StartAnimation.To = 0;
-                StartAnimation.Duration = TimeSpan.FromSeconds(0.6);
-                StartAnimation.Completed += delegate
-                {
-                    IUser.Source = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + @"\IUser.jpg"));
-                    DoubleAnimation EndAnimation = new DoubleAnimation();
-                    EndAnimation.From = 0;
-                    EndAnimation.To = 1;
-                    EndAnimation.Duration = TimeSpan.FromSeconds(1.2);
-                    IUser.BeginAnimation(Image.OpacityProperty, EndAnimation);
-                };
-                IUser.BeginAnimation(Image.OpacityProperty, StartAnimation);
+                Animation.ChangeImage(IUser, new BitmapImage(new Uri(Directory.GetCurrentDirectory() + @"\IUser.jpg")));
                 BSetImages = true;
             }
             else
